@@ -1,0 +1,15 @@
+#
+# This file contains the test data for the linked lists code the
+# format for each field is
+#                         string type scope lineNumber
+#
+
+Huey integer 0 2
+Dewey integer 0 3
+Louie real 0 4
+Donald real 1 5
+Scroodge real 1 6
+Daisy integer 1 7
+Webbiegail integer 0 8
+LudwigVonDrake real 1 10
+Elvira integer 0 9
