@@ -8,3 +8,6 @@ Hidden/
 
 # Mac related files
 .DS_Store
+
+# Test files
+tests/
