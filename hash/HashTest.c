@@ -83,9 +83,19 @@ int main (int argc, const char * argv[]) {          // Program entry point
 
            // Insert some variables into the hash table.
            while (!feof(fp)){
-              // Allocate memory for new item from the input file
-              node_p = NewItem(GetString(fp), GetType(fp), GetInt(fp),
-                               GetInt(fp));
+			// Allocate memory for new item from the input file
+              /* Note: evaluation order of function arguments is
+               * implementation dependent and since both functions read
+               * from the SAME input file this can cause problems in some
+               * UNIX flavors (e.g. linux/gcc) so serialize the file
+               * access
+               */
+              char * string = GetString(fp);
+              int type      = GetInt(fp);
+              int scope     = GetInt(fp);
+              int line      = GetInt(fp);
+
+              node_p = NewItem(string, type, scope, line);
               g_hash_table_insert(theTable_p, node_p->name_p, node_p);
            }
         }
